@@ -2,6 +2,9 @@ import React from "react";
 import Home from "./pages/home";
 import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import MovieDeatail from "./pages/movie-detail";
+import 'react-circular-progressbar/dist/styles.css';
+import Demo from "./pages/demo-responsive";
+
 
 function App() {
   // config router
@@ -13,6 +16,10 @@ function App() {
     {
       path: "/movie/:movieId", // slug
       element: <MovieDeatail />,
+    },
+    {
+      path: "demo", // slug
+      element: <Demo />,
     },
   ]);
 

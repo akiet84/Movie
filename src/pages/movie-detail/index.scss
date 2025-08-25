@@ -1,3 +1,5 @@
+@import '/src/styles/mixin/layout.scss';
+
 .movie-detail{
     .banner{
         position: relative;
@@ -25,8 +27,25 @@
         padding: 120px 300px;
         gap: 50px;
 
+        @include tablet{
+            padding: 100px 40px;
+        }
+
+        @include sp{
+            padding:100px 30px ;
+            display: block;
+        }
+
+
+
         .left{
             width: 350px;
+            flex-shrink: 0;
+
+            @include sp{
+                width: 100%;
+            }
+
             img{
                 width: 100%;
                 border-radius: 12px;
@@ -39,11 +58,57 @@
             h1{
                 font-size: 40px;
                 font-weight: 400px;
+
+                @include bottom-line;
             }
-            p{
-                font-size: 20px;
-                opacity: 0.5;
-            }
+            .tagline {
+          font-size: 24px;
+          color: #fff;
+          opacity: 0.5;
+          margin-bottom: 10px;
+        }
+            .circleRating {
+          width: 100px;
+          background-color: #04152d;
+          border-radius: 50%;
+          padding: 2px;
+          margin-top: 20px;
+          .CircularProgressbar-text {
+            font-size: 34px;
+            font-weight: 700;
+            fill: #fff;
+          }
+          .CircularProgressbar-trail {
+            stroke: transparent;
+          }
+
+        }
+
+        h3{
+            font-size: 25px;
+        }
+        p{
+            font-size: 25px;
+            line-height: 35px;
+        }
+
+        .box{
+            border-bottom: 1px solid rgba(255, 255,255, .1);
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        .label{
+            margin-right: 10px;
+            @include bg-red;
+        }
+
+        .value{
+            color: #fff;
+            opacity: .5;
+        }
+
         }
      }
     }

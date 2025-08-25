@@ -1,3 +1,5 @@
+@import '/src/styles/mixin/layout.scss';
+
 .header {
   display: flex;
   align-items: center;
@@ -14,16 +16,17 @@
     width: 200px;
   }
 
-  &__link a {
-    text-decoration: none;
-    margin-right: 30px;
-    color: white;
-    font-size: 20px;
-    font-weight: 500;
+  &__link {
+    display: flex;
+    a {
+      text-decoration: none;
+      margin-right: 30px;
+      color: white;
+      font-size: 20px;
+      font-weight: 500;
+      display: block;
 
-    &:hover {
-      color: red;
-      transition: 0.7s;
+      @include bottom-line;
     }
   }
 }

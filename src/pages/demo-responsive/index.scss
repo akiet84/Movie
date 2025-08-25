@@ -1,0 +1,21 @@
+@import '/src/styles/mixin/layout.scss';
+
+.demo{
+    h1{
+        background-color: red;
+
+        @include tablet {
+            //content
+            background-color: yellow;
+        }
+
+        @include sp{
+            background-color: blue;
+        }
+    }
+}
+
+
+
+
+
