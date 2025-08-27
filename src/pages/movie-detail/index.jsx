@@ -93,10 +93,11 @@ function MovieDeatail() {
                 <div className="info">
                   <span className="label">Director:</span>
                   <span className="value">
-                    {
+                    {credits.crew?.filter(
+                      (item) => item.job === "Director"
+                    )[0] &&
                       credits.crew?.filter((item) => item.job === "Director")[0]
-                        ?.name
-                    }
+                        ?.name}
                   </span>
                 </div>
               </div>
