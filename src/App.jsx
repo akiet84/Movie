@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import MovieDeatail from "./pages/movie-detail";
 import 'react-circular-progressbar/dist/styles.css';
 import Demo from "./pages/demo-responsive";
+import SearchPage from "./components/search";
 
 
 function App() {
@@ -18,9 +19,14 @@ function App() {
       element: <MovieDeatail />,
     },
     {
+      path: "/search/:keyWord", // slug
+      element: <SearchPage />,
+    },
+    {
       path: "demo", // slug
       element: <Demo />,
     },
+
   ]);
 
   return <RouterProvider router={router} />;

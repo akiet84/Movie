@@ -1,0 +1,12 @@
+@import "/src/styles/mixin/layout.scss";
+.container {
+  padding: 30px 300px;
+
+  @include tablet {
+    padding: 40px 100px;
+  }
+
+  @include sp {
+    padding: 40px 20px;
+  }
+}

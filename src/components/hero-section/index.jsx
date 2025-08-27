@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import "./index.scss";
+import { useNavigate } from "react-router-dom";
 function HeroSection() {
-  const [keyWord, setKeyWord] = useState ("");
+  // B1: lấy keyWord người dùng nhập
+  const [keyWord, setKeyWord] = useState("");
+  const navigate = useNavigate()
 
-  const handleSearch = ()
-
-
+  //B2: action => chuyển qua page search (KÈM THEO KEYWORD)
+  const handleSearch = () => {
+    navigate(`/search/${keyWord}`);
+  };
 
   return (
     <div className="hero-section">
@@ -14,9 +18,12 @@ function HeroSection() {
         <p>Millions of movies, TV shows and people to discover. Explore now.</p>
         <div className="search">
           <input
-          value={keyWord}
-           type="text" placeholder="Search for the movie or TV show..." />
-          <button>Search</button>
+            value={keyWord}
+            onChange={(event) => setKeyWord(event.target.value)}
+            type="text"
+            placeholder="Search for the movie or TV show..."
+          />
+          <button onClick={handleSearch} >Search</button>
         </div>
       </div>
       <div className="overlay"></div>
