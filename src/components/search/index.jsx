@@ -32,7 +32,7 @@ function SearchPage() {
           {movies.map((movie) => (
             <MovieCard
               id={movie.id}
-              name={movie.title ? movie.title : movie.name}
+              name={movie.title ? movie.title : movie?.name}
               description={
                 movie.release_date ? movie.release_date : movie.first_air_date
               }
